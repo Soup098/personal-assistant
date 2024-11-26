@@ -1,35 +1,47 @@
+import SideBar from './components/SideBar.jsx'
+import Home from './components/Home.jsx'
+import Calendar from './components/Calendar.jsx'
+import Finance from './components/Finance.jsx'
+import Recipes from './components/Recipes.jsx'
+import Cleaning from './components/Cleaning.jsx'
+import Lists from './components/Lists.jsx'
+
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Personal Assistant App</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    const [activeAppComponent, setActiveAppComponent] = useState(null)
+
+    function handleNavClick(componentName){
+        setActiveAppComponent(componentName)
+    }
+
+    function renderComponent(){
+        switch(activeAppComponent){
+            case 'home' :
+                return <Home />
+            case 'calendar':
+                return <Calendar />
+            case 'finance':
+                return <Finance />    
+            case 'recipes':
+                return <Recipes />
+            case 'cleaning':
+                return <Cleaning />
+            case 'lists':
+                return <Lists />
+            default:
+                return null
+        }
+    }
+
+    return (
+        <main>
+            <SideBar onNavClick={handleNavClick} />
+            {renderComponent()}
+        </main>
+    )
 }
 
-export default App
+
+//get a better understanding of how the onclick
