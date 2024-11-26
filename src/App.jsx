@@ -45,3 +45,11 @@ export default function App() {
 
 
 //get a better understanding of how the onclick
+
+// 1. <SideBar /> is given the prop onNavClick with the handleNavClick() function as an argument
+
+// 2. when a button is clicked in <SideBar/>, an arrow function returns the onNavClick() function, giving it the string name of the button as an argument
+
+// 3. the string name is passed to the onNavClick which passes it to the handleNavClick() function, which runs the setActiveComponent() function from the useState()
+
+// 4. the activeAppComponent is set to the string name by setActiveComponent(), which is used in the renderComponents() function switch statement to render the specific component associated with the string name.
