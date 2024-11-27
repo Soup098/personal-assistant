@@ -1,4 +1,3 @@
-import SideBar from './components/SideBar.jsx'
 import Home from './components/Home.jsx'
 import Calendar from './components/Calendar.jsx'
 import Finance from './components/Finance.jsx'
@@ -12,8 +11,8 @@ export default function App() {
 
     const [activeAppComponent, setActiveAppComponent] = useState(null)
 
-    function handleNavClick(componentName){
-        setActiveAppComponent(componentName)
+    function handleNavClick(buttonName){
+        setActiveAppComponent(buttonName)
     }
 
     function renderComponent(){
@@ -37,9 +36,26 @@ export default function App() {
 
     return (
         <main>
-            <SideBar onNavClick={handleNavClick} />
+            <nav className="app-nav">
+                <h1>Personal Assistant</h1>
+                <div className="nav-items">
+                    <button className="nav-btn home-btn"
+                    onClick={() =>handleNavClick("home")}>Home</button>
+                    <button className="nav-btn calendar-btn" 
+                    onClick={() =>handleNavClick("calendar")}>Calendar</button>
+                    <button className="nav-btn finance-btn"
+                    onClick={() =>handleNavClick("finance")}>Finance</button>
+                    <button className="nav-btn recipes-btn"
+                    onClick={() =>handleNavClick("recipes")}>Recipes</button>
+                    <button className="nav-btn cleaning-btn"
+                    onClick={() =>handleNavClick("cleaning")}>Cleaning</button>
+                    <button className="nav-btn lists-btn"
+                    onClick={() =>handleNavClick("lists")}>Lists</button>
+                </div>
+            </nav>
             {renderComponent()}
         </main>
+        
     )
 }
 
