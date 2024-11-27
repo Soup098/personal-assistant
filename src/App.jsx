@@ -4,6 +4,7 @@ import Finance from './components/Finance.jsx'
 import Recipes from './components/Recipes.jsx'
 import Cleaning from './components/Cleaning.jsx'
 import Lists from './components/Lists.jsx'
+import Garden from './components/Garden.jsx'
 
 import { useState } from 'react'
 
@@ -29,6 +30,8 @@ export default function App() {
                 return <Cleaning />
             case 'lists':
                 return <Lists />
+            case 'garden':
+                return <Garden />
             default:
                 return null
         }
@@ -51,6 +54,8 @@ export default function App() {
                     onClick={() =>handleNavClick("cleaning")}>Cleaning</button>
                     <button className="nav-btn lists-btn"
                     onClick={() =>handleNavClick("lists")}>Lists</button>
+                    <button className="nav-btn lists-btn"
+                    onClick={() =>handleNavClick("garden")}>Garden</button>
                 </div>
             </nav>
             {renderComponent()}
