@@ -41,6 +41,7 @@ main{
 }
 .nav-btn:hover{
     background-color: #202D3C;
+    cursor: pointer;
 }
 
 /* *************** */

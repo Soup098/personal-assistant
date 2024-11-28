@@ -1,0 +1,23 @@
+.calendar-app{
+    color: white;
+}
+.calendar-app > header{
+    background-color: #222d3a;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.calendar-app > nav{
+    background-color: #222d3a;
+    height: 30px;
+}
+.calendar-app > nav > button{
+    background-color: #222d3a;
+    border: none;
+    height: 100%;
+    width: 80px;
+    color: whitesmoke;
+    box-shadow: 0 0 1px black;
+}

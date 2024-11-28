@@ -12,8 +12,8 @@ export default function App() {
 
     const [activeAppComponent, setActiveAppComponent] = useState(null)
 
-    function handleNavClick(buttonName){
-        setActiveAppComponent(buttonName)
+    function chooseComponent(componentName){
+        setActiveAppComponent(componentName)
     }
 
     function renderComponent(){
@@ -43,19 +43,19 @@ export default function App() {
                 <h1>Personal Assistant</h1>
                 <div className="nav-items">
                     <button className="nav-btn home-btn"
-                    onClick={() =>handleNavClick("home")}>Home</button>
+                    onClick={() =>chooseComponent("home")}>Home</button>
                     <button className="nav-btn calendar-btn" 
-                    onClick={() =>handleNavClick("calendar")}>Calendar</button>
+                    onClick={() =>chooseComponent("calendar")}>Calendar</button>
                     <button className="nav-btn finance-btn"
-                    onClick={() =>handleNavClick("finance")}>Finance</button>
+                    onClick={() =>chooseComponent("finance")}>Finance</button>
                     <button className="nav-btn recipes-btn"
-                    onClick={() =>handleNavClick("recipes")}>Recipes</button>
+                    onClick={() =>chooseComponent("recipes")}>Recipes</button>
                     <button className="nav-btn cleaning-btn"
-                    onClick={() =>handleNavClick("cleaning")}>Cleaning</button>
+                    onClick={() =>chooseComponent("cleaning")}>Cleaning</button>
                     <button className="nav-btn lists-btn"
-                    onClick={() =>handleNavClick("lists")}>Lists</button>
+                    onClick={() =>chooseComponent("lists")}>Lists</button>
                     <button className="nav-btn lists-btn"
-                    onClick={() =>handleNavClick("garden")}>Garden</button>
+                    onClick={() =>chooseComponent("garden")}>Garden</button>
                 </div>
             </nav>
             {renderComponent()}

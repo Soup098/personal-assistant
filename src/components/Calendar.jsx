@@ -1,7 +1,15 @@
+import '../components/calendar.css'
 export default function Calendar(){
+
     return(
-        <div className="calendar-app this-app">
-            <h1>THIS IS THE CALENDAR</h1>
+        <div className="calendar-app">
+            <header>Calendar App</header>
+            <nav>
+                <button>THING</button>
+                <button>THING</button>
+                <button>THING</button>
+                <button>THING</button>
+            </nav>
         </div>
     )
 }
